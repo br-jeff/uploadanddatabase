@@ -1,16 +1,15 @@
 const connection = require('../infrastructure/connection')
 
-class jobs {
-    add(){
+class Jobs {
+    add(jobs){
         const sql = 'insert into job  set ? '
-
         connection.query(sql, jobs, (err,result) => {
-            if(err) console.log(err)
+            if(err) {console.log(err)}
 
-            else console.log(result)
+            else {console.log(result)}
         })
 
     }
 }
 
-module.exports = new jobs
+module.exports = new Jobs
