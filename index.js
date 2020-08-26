@@ -1,6 +1,6 @@
 const customExpress = require("./config/customExpress")
-const connetion = require('./infrastructure/connection')
 const connection = require("./infrastructure/connection")
+const Tables = require('./infrastructure/Tables')
 const app = customExpress()
 
 connection.connect(err => {
@@ -9,6 +9,7 @@ connection.connect(err => {
         console.log(err)
     } else {
         console.log('you are connected')
+        Tables.init(connection)
     }
   
 })
