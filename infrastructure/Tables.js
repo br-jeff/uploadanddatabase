@@ -10,7 +10,7 @@ class Tables {
         
     makeJob() {
         const sql = 
-        `create table job (id int NOT null AUTO_INCREMENT,
+        `create table IF NOT EXISTS job (id int NOT null AUTO_INCREMENT,
         client varchar(50) NOT null, pet varchar(20),
         service varchar(20) NOT null, status varchar(20) NOT null,
         obs text , PRIMARY KEY(id)  )`
