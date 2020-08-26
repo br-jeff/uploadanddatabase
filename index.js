@@ -1,7 +1,10 @@
 const express = require('express')
-
+const consign = require('consign')
 const app = express()
 
-app.get('/', (req,res) => res.send('hello') )
+
+consign()
+        .include('controllers')
+        .into(app)
 
 app.listen(3000)
